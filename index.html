@@ -58,6 +58,10 @@
     legend {
       font-weight: bold;
     }
+
+    form > * {
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -93,12 +97,32 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Earthquake</li>
-      <li>Knock Off</li>
-      <li>U-turn</li>
-      <li>Stealth Rock</li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Skill Name</th>
+          <th>Proficiency Level</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Earthquake</td>
+          <td>9</td>
+          <td><meter value="9" min="0" max="10">9</meter></td>
+        </tr>
+        <tr>
+          <td>Knock Off</td>
+          <td>8</td>
+          <td><meter value="8" min="0" max="10">8</meter></td>
+        </tr>
+        <tr>
+          <td>U-turn</td>
+          <td>7</td>
+          <td><meter value="7" min="0" max="10">7</meter></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Preferences -->
@@ -138,6 +162,10 @@
   <section id="feedback">
     <h2>Feedback</h2>
     <p>If you’ve witnessed Landorus Therian’s might in battle, share your thoughts and strategy tips by email.</p>
+    <details>
+      <summary>Why did you choose this field?</summary>
+      <p>Landorus chose this path to wield nature’s forces with purpose — restoring balance and commanding the skies and earth alike.</p>
+    </details>
   </section>
 
 </body>
