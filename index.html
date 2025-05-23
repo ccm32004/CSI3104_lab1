@@ -33,6 +33,31 @@
       display: flex;
       flex-direction: column;
     }
+
+    /* Styles for the new Skills table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+
+    /* Optional spacing for the new sections */
+    fieldset {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -74,6 +99,39 @@
       <li>U-turn</li>
       <li>Stealth Rock</li>
     </ul>
+  </section>
+
+  <!-- Preferences -->
+  <section id="preferences">
+  <h2>Preferences</h2>
+  <form autocomplete="on">
+    <fieldset>
+      <legend>Preferred Work Environment</legend>
+      <label><input type="radio" name="work_env" value="remote" /> Remote</label><br />
+      <label><input type="radio" name="work_env" value="hybrid" /> Hybrid</label><br />
+      <label><input type="radio" name="work_env" value="in_person" /> In-person</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Areas of Interest</legend>
+      <label><input type="checkbox" name="interest" value="AI" /> AI</label><br />
+      <label><input type="checkbox" name="interest" value="WebDev" /> Web Development</label><br />
+      <label><input type="checkbox" name="interest" value="Cybersecurity" /> Cybersecurity</label>
+    </fieldset>
+
+    <label for="language">Favorite Programming Language:</label>
+    <input list="languages" id="language" name="language" />
+    <datalist id="languages">
+      <option value="Python">
+      <option value="JavaScript">
+      <option value="Java">
+      <option value="C++">
+      <option value="Rust">
+    </datalist><br /><br />
+
+    <label for="nickname">Preferred Nickname:</label>
+    <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" autocomplete="nickname" />
+  </form>
   </section>
 
   <!-- Feedback Section -->
