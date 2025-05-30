@@ -5,62 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Landorus Therian Forme Profile</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
+      background-image: url("genies_background.avif");
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #cc5500;
-      font-weight: bold;
+
+    h1, h2 {
+      color: darkred;
+      font-family: 'Georgia', serif;
     }
-    section {
-      margin-top: 40px;
-    }
-    img.profile {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid #cc5500;
-    }
+
+    /* Header Styling */
     header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    header div {
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      background: linear-gradient(to right, #003366, #009999);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: white;
     }
 
-    /* Styles for the new Skills table */
+    /* uOttawa Logo */
+    header img[src$="uottawa_logo.png"] {
+      border: 12px solid darkred;
+      float: left;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    /* Profile Image */
+    header img.profile {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    /* Name (h1) */
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Email */
+    header a[href^="mailto"] {
+      display: block;
+      font-size: 1em;
+      color: #fff;
+      margin-top: 5px;
+    }
+
+    /* Navigation Links */
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #cce6ff;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      margin: 20px;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Table Styling */
     table {
-      width: 100%;
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
       border-collapse: collapse;
-      margin-top: 15px;
     }
+
     th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #eee;
+      padding: 8px 12px;
+      text-align: center;
+      border: 1px solid #999;
     }
 
-    /* Optional spacing for the new sections */
-    fieldset {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    legend {
-      font-weight: bold;
+    meter {
+      width: 100%;
     }
 
-    form > * {
-      margin-top: 15px;
+    /* Replace Radio Buttons with Dropdown */
+    fieldset select {
+      display: block;
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    /* Ensure form fields are readable */
+    input[type="text"], input[list] {
+      width: 60%;
+      padding: 5px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -76,14 +138,14 @@
       <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/645_f2.png" alt="Landorus Therian Forme" class="profile" />
       <a href="mailto:yma178@uottawa.ca">landorus@therian.com</a>
     </div>
-  </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#feedback">Feedback</a>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#feedback">Feedback</a>
+    </nav>
+  </header>
 
   <!-- About Section -->
   <section id="about">
@@ -131,9 +193,12 @@
   <form autocomplete="on">
     <fieldset>
       <legend>Preferred Work Environment</legend>
-      <label><input type="radio" name="work_env" value="unova" />Unova</label><br />
-      <label><input type="radio" name="work_env" value="alola" />Alola</label><br />
-      <label><input type="radio" name="work_env" value="galar" />Galar</label>
+      <label for="work_env_dropdown">Choose a region:</label>
+      <select id="work_env_dropdown" name="work_env">
+        <option value="unova">Unova</option>
+        <option value="alola">Alola</option>
+        <option value="galar">Galar</option>
+      </select>
     </fieldset>
 
     <fieldset>
